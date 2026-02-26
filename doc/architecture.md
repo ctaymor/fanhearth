@@ -47,3 +47,4 @@ Technical decisions are recorded in `doc/adr/`. Use the `adr` CLI to create new 
 | [0002](adr/0002-modular-replaceable-architecture-as-guiding-principle.md) | Modular, replaceable architecture as guiding principle |
 | [0003](adr/0003-agent-based-development-workflow.md) | Agent-based development workflow |
 | [0004](adr/0004-github-issues-as-feature-specs.md) | GitHub Issues as feature specs |
+| [0005](adr/0005-mvp-tech-stack.md) | MVP tech stack |
