@@ -1,0 +1,131 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BASE ===== */
+body {
+  background-color: #1a3d1a;
+  min-height: 100vh;
+  font-family: 'Crimson Text', Georgia, serif;
+  color: #3d2a15;
+  overflow-x: hidden;
+}
+
+/* ===== STARFIELD ===== */
+/* Canvas is fixed behind all content */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== PAGE WRAPPER ===== */
+#page {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ===== BANNER ===== */
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: #f5c842;
+  text-shadow:
+    2px 2px 0 #7a4a00,
+    0 0 30px rgba(245, 200, 66, 0.6),
+    0 0 60px rgba(245, 200, 66, 0.3);
+  letter-spacing: 0.15em;
+}
+
+/* ===== MAIN CONTENT BOX ===== */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(245, 238, 220, 0.95);
+  border-radius: 18px;
+  border: 2px solid #c9a84c;
+  box-shadow:
+    0 0 0 4px rgba(201, 168, 76, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  padding: 2.5rem 3rem;
+  text-align: center;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 1.5rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid #c9a84c;
+}
+
+.section-divider {
+  display: block;
+  color: #c9a84c;
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  margin-bottom: 1rem;
+}
+
+.coming-soon {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: #5c3310;
+  text-shadow: 1px 1px 0 rgba(201, 168, 76, 0.5);
+  letter-spacing: 0.08em;
+}
+
+.section h2 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #5c3310;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a3320;
+}
+
+.placeholder {
+  color: #9a7a5a;
+  font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding-top: 2rem;
+  color: rgba(245, 238, 220, 0.4);
+  font-size: 0.8rem;
+  font-family: 'Crimson Text', serif;
+  letter-spacing: 0.05em;
+}
+
+footer a {
+  color: rgba(245, 238, 220, 0.4);
+}
+
+footer p + p {
+  margin-top: 0.4rem;
+}
