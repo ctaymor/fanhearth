@@ -120,6 +120,32 @@ main {
   font-style: italic;
 }
 
+/* Multiple paragraphs in a section */
+.section p + p {
+  margin-top: 0.75rem;
+}
+
+/* Lists */
+.section ul,
+.section ol {
+  display: inline-block;
+  text-align: left;
+  margin: 0.75rem auto;
+  padding-left: 1.5rem;
+}
+
+.section li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2a1a3a;
+  margin-bottom: 0.2rem;
+}
+
+/* Links inside the content box */
+.section a {
+  color: #6600cc;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
