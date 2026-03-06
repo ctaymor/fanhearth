@@ -7,10 +7,10 @@
 
 /* ===== BASE ===== */
 body {
-  background-color: #1a3d1a;
+  background-color: #0d0a1e;
   min-height: 100vh;
   font-family: 'Crimson Text', Georgia, serif;
-  color: #3d2a15;
+  color: #e8e0f0;
   overflow-x: hidden;
 }
 
@@ -40,28 +40,31 @@ header {
 }
 
 header h1 {
-  font-family: 'Cinzel', serif;
-  font-weight: 900;
-  font-size: clamp(3rem, 10vw, 6rem);
-  color: #f5c842;
-  text-shadow:
-    2px 2px 0 #7a4a00,
-    0 0 30px rgba(245, 200, 66, 0.6),
-    0 0 60px rgba(245, 200, 66, 0.3);
-  letter-spacing: 0.15em;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  /* 90deg runs the gradient left-to-right across the text */
+  /* pink dominates the left third, blue the right third, purple only in the seam */
+  background: linear-gradient(90deg, #ff0099 0%, #ff0099 20%, #cc22ee 40%, #9933ff 50%, #2299ff 60%, #00aaff 80%, #00aaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(200, 50, 200, 0.5));
+  letter-spacing: 0.12em;
 }
 
 /* ===== MAIN CONTENT BOX ===== */
+/* Light box on dark bg = classic fan site internet energy */
+/* Gradient border trick: gradient padding-box + transparent border-box */
 main {
   max-width: 680px;
   margin: 0 auto;
-  background: rgba(245, 238, 220, 0.95);
+  background: linear-gradient(#faf7ff, #faf7ff) padding-box,
+              linear-gradient(135deg, #ff0099, #9933ff, #00aaff) border-box;
+  border: 2px solid transparent;
   border-radius: 18px;
-  border: 2px solid #c9a84c;
   box-shadow:
-    0 0 0 4px rgba(201, 168, 76, 0.2),
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 0 50px rgba(157, 78, 221, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.8);
   padding: 2.5rem 3rem;
   text-align: center;
 }
@@ -72,43 +75,48 @@ main {
 }
 
 .section + .section {
-  border-top: 1px solid #c9a84c;
+  border-top: 1px solid rgba(150, 50, 220, 0.2);
 }
 
 .section-divider {
   display: block;
-  color: #c9a84c;
-  font-size: 1.1rem;
-  letter-spacing: 0.4em;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #9933ff;
+  letter-spacing: 0.25em;
   margin-bottom: 1rem;
 }
 
+/* Coming Soon */
 .coming-soon {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: clamp(1.6rem, 5vw, 2.4rem);
-  color: #5c3310;
-  text-shadow: 1px 1px 0 rgba(201, 168, 76, 0.5);
-  letter-spacing: 0.08em;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  background: linear-gradient(90deg, #ff0099 0%, #ff0099 20%, #cc22ee 40%, #9933ff 50%, #2299ff 60%, #00aaff 80%, #00aaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(200, 50, 200, 0.3));
+  letter-spacing: 0.12em;
 }
 
+/* Section headings */
 .section h2 {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #5c3310;
-  letter-spacing: 0.06em;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+  color: #6600cc;
+  letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
 }
 
+/* Body text */
 .section p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #4a3320;
+  color: #2a1a3a;
 }
 
 .placeholder {
-  color: #9a7a5a;
+  color: #9977bb;
   font-style: italic;
 }
 
@@ -116,14 +124,14 @@ main {
 footer {
   text-align: center;
   padding-top: 2rem;
-  color: rgba(245, 238, 220, 0.4);
-  font-size: 0.8rem;
-  font-family: 'Crimson Text', serif;
-  letter-spacing: 0.05em;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: rgba(200, 180, 230, 0.3);
+  letter-spacing: 0.08em;
 }
 
 footer a {
-  color: rgba(245, 238, 220, 0.4);
+  color: rgba(200, 180, 230, 0.3);
 }
 
 footer p + p {
