@@ -11,6 +11,7 @@ async function loadPartials() {
 
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('collapsed');
+  document.body.classList.toggle('sidebar-collapsed');
 }
 
 document.addEventListener('DOMContentLoaded', loadPartials);

@@ -148,23 +148,32 @@ body[data-page="pod-page"]        [data-nav="pod-1"] {
   position: relative;
 }
 
-.nav-fandom-toggle {
-  position: absolute;
-  right: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  cursor: pointer;
-  user-select: none;
+/* Sidebar collapse/expand toggle — lives in the header so it stays visible
+   when the sidebar is collapsed. Arrow flips based on `body.sidebar-collapsed`. */
+.sidebar-toggle {
+  flex-shrink: 0;
+  width: 36px;
   background: none;
-  border: none;
-  padding: 4px 8px;
-  line-height: 1;
+  border: 1px solid rgba(150, 50, 220, 0.35);
+  border-radius: 8px;
+  color: var(--text-light);
+  cursor: pointer;
   font-family: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
-.nav-fandom-toggle:hover { color: var(--accent-pink); }
+.sidebar-toggle::before { content: '\2039'; }               /* ‹ when open */
+body.sidebar-collapsed .sidebar-toggle::before { content: '\203A'; } /* › when collapsed */
+.sidebar-toggle:hover {
+  color: var(--accent-pink);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 8px rgba(255, 0, 153, 0.35);
+}
 
 .nav-pod-link {
   display: block;
