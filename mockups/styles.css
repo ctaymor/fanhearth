@@ -317,10 +317,28 @@ body:not([data-show-more]) .more-btn { display: none; }
 .post-avatar.teal  { background: var(--accent-blue); box-shadow: 0 0 8px rgba(0, 170, 255, 0.5); }
 .post-avatar.olive { background: var(--accent-pink); box-shadow: 0 0 8px rgba(255, 0, 153, 0.5); }
 .post-avatar svg   { width: 38px; height: 38px; }
+.post-avatar img   { width: 100%; height: 100%; object-fit: cover; }
+
+.post-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.post-username {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--text-heading);
+  text-decoration: none;
+  align-self: flex-start;
+}
+.post-username:hover { color: var(--accent-pink); }
 
 .post-body {
-  flex: 1;
-  padding-top: 4px;
   font-size: 1.02rem;
   line-height: 1.55;
   color: var(--text-dark);
@@ -422,6 +440,7 @@ body:not([data-show-more]) .more-btn { display: none; }
   box-shadow: 0 0 12px rgba(153, 51, 255, 0.5);
 }
 .profile-avatar svg { width: 54px; height: 54px; }
+.profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
 .short-form-link {
   font-family: 'Oswald', sans-serif;
@@ -652,3 +671,4 @@ body:not([data-show-more]) .more-btn { display: none; }
 .pod-member-avatar:hover { box-shadow: 0 0 18px rgba(153, 51, 255, 0.8); }
 .pod-member-avatar.olive { background: var(--accent-pink); box-shadow: 0 0 12px rgba(255, 0, 153, 0.5); }
 .pod-member-avatar svg { width: 54px; height: 54px; }
+.pod-member-avatar img { width: 100%; height: 100%; object-fit: cover; }
