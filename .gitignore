@@ -1,3 +1,4 @@
 .tmp
 .debug_notes
 .build/
+.staticrypt-password

@@ -13,3 +13,34 @@ serve:
 # Open the main feed in the default browser (macOS)
 open:
     open http://localhost:8080/index.html
+
+# Build the encrypted FanHearth site into ../docs/ for GitHub Pages.
+# Sources:  ../site-src/ (info page), ./ (mockups)
+# Password: ../.staticrypt-password (gitignored)
+# Partials left plain so the fetch-based include loader still works.
+# After running, commit ../docs/ and push.
+build:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    PW_FILE="../.staticrypt-password"
+    if [ ! -f "$PW_FILE" ]; then
+      echo "ERROR: $PW_FILE not found"; exit 1
+    fi
+    PASSWORD=$(tr -d '[:space:]' < "$PW_FILE")
+    if [ -z "$PASSWORD" ] || [ "$PASSWORD" = "changeme" ]; then
+      echo "ERROR: set a real password in $PW_FILE first (not empty, not 'changeme')"; exit 1
+    fi
+    echo "→ syncing mockups source into ../docs/mockups/"
+    rm -rf ../docs/mockups
+    mkdir -p ../docs/mockups
+    cp -R *.html styles.css includes.js avatars partials ../docs/mockups/
+    echo "→ encrypting mockup HTML files (partials left plain)"
+    for f in ../docs/mockups/*.html; do
+      npx --yes staticrypt "$f" -p "$PASSWORD" -d ../docs/mockups/ --short
+    done
+    echo "→ syncing info page assets into ../docs/"
+    cp ../site-src/style.css ../docs/style.css
+    cp ../site-src/starfield.js ../docs/starfield.js
+    echo "→ encrypting info page"
+    npx --yes staticrypt ../site-src/index.html -p "$PASSWORD" -d ../docs/ --short
+    echo "✓ built. commit ../docs/ and push to publish."

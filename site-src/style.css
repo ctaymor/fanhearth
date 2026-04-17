@@ -1,0 +1,165 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BASE ===== */
+body {
+  background-color: #0d0a1e;
+  min-height: 100vh;
+  font-family: 'Crimson Text', Georgia, serif;
+  color: #e8e0f0;
+  overflow-x: hidden;
+}
+
+/* ===== STARFIELD ===== */
+/* Canvas is fixed behind all content */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== PAGE WRAPPER ===== */
+#page {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ===== BANNER ===== */
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+}
+
+header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  /* 90deg runs the gradient left-to-right across the text */
+  /* pink dominates the left third, blue the right third, purple only in the seam */
+  background: linear-gradient(90deg, #ff0099 0%, #ff0099 20%, #cc22ee 40%, #9933ff 50%, #2299ff 60%, #00aaff 80%, #00aaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(200, 50, 200, 0.5));
+  letter-spacing: 0.12em;
+}
+
+/* ===== MAIN CONTENT BOX ===== */
+/* Light box on dark bg = classic fan site internet energy */
+/* Gradient border trick: gradient padding-box + transparent border-box */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  background: linear-gradient(#faf7ff, #faf7ff) padding-box,
+              linear-gradient(135deg, #ff0099, #9933ff, #00aaff) border-box;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  box-shadow:
+    0 0 50px rgba(157, 78, 221, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.8);
+  padding: 2.5rem 3rem;
+  text-align: center;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 1.5rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(150, 50, 220, 0.2);
+}
+
+.section-divider {
+  display: block;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #9933ff;
+  letter-spacing: 0.25em;
+  margin-bottom: 1rem;
+}
+
+/* Coming Soon */
+.coming-soon {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  background: linear-gradient(90deg, #ff0099 0%, #ff0099 20%, #cc22ee 40%, #9933ff 50%, #2299ff 60%, #00aaff 80%, #00aaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(200, 50, 200, 0.3));
+  letter-spacing: 0.12em;
+}
+
+/* Section headings */
+.section h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+  color: #6600cc;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+/* Body text */
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2a1a3a;
+}
+
+.placeholder {
+  color: #9977bb;
+  font-style: italic;
+}
+
+/* Multiple paragraphs in a section */
+.section p + p {
+  margin-top: 0.75rem;
+}
+
+/* Lists */
+.section ul,
+.section ol {
+  display: inline-block;
+  text-align: left;
+  margin: 0.75rem auto;
+  padding-left: 1.5rem;
+}
+
+.section li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2a1a3a;
+  margin-bottom: 0.2rem;
+}
+
+/* Links inside the content box */
+.section a {
+  color: #6600cc;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding-top: 2rem;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: rgba(200, 180, 230, 0.3);
+  letter-spacing: 0.08em;
+}
+
+footer a {
+  color: rgba(200, 180, 230, 0.3);
+}
+
+footer p + p {
+  margin-top: 0.4rem;
+}
