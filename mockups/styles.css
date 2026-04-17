@@ -372,7 +372,6 @@ body:not([data-show-more]) .more-btn { display: none; }
 .post-action-btn svg [fill="#1a1a1a"]   { fill: currentColor; }
 
 .post-fandom-tag {
-  margin-left: auto;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-style: italic;
