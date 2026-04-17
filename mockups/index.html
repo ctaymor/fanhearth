@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FanHearth — Main Feed</title>
+  <title>FanHearth — Following</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="main-feed">
+<body data-page="following">
 
 <div data-include="partials/sidebar.html"></div>
 
@@ -14,7 +14,11 @@
   <div data-include="partials/header.html"></div>
 
   <div class="content">
-    <h2 class="feed-title">Main Feed</h2>
+    <h2 class="feed-title">Following</h2>
+    <div class="feed-filter" role="tablist" aria-label="Filter who you see">
+      <button class="feed-filter-btn active" type="button" role="tab" aria-selected="true">Everyone I follow</button>
+      <button class="feed-filter-btn"        type="button" role="tab" aria-selected="false">Moots only</button>
+    </div>
     <div class="feed">
 
       <!-- Post card canonical shape:
@@ -28,7 +32,7 @@
                  <div class="post-body">Post text here</div>      (omit for image-only post)
                </div>
              </div>
-             <!-- optional .post-image-placeholder here -->
+             [optional .post-image-placeholder here]
              <hr class="post-divider">
              <div class="post-actions">
                …like / comment / share buttons…

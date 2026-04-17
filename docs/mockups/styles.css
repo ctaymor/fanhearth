@@ -119,7 +119,8 @@ body {
 .nav-link:hover { color: var(--accent-pink); text-shadow: 0 0 8px rgba(255, 0, 153, 0.5); }
 
 /* Active nav state driven by <body data-page="..."> */
-body[data-page="main-feed"]       [data-nav="main-feed"],
+body[data-page="following"]       [data-nav="following"],
+body[data-page="third-place"]     [data-nav="third-place"],
 body[data-page="user-profile"]    [data-nav="my-profile"],
 body[data-page="user-short-form"] [data-nav="my-profile"],
 body[data-page="blog-post"]       [data-nav="my-profile"],
@@ -280,6 +281,141 @@ body:not([data-show-more]) .more-btn { display: none; }
 }
 
 .feed { display: flex; flex-direction: column; gap: 18px; }
+
+/* Filter toggle — used on Following for Moots filter. Segmented pill. */
+.feed-filter {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(150, 50, 220, 0.35);
+  border-radius: 22px;
+  padding: 4px;
+}
+
+.feed-filter-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+.feed-filter-btn:hover { color: var(--accent-pink); }
+.feed-filter-btn.active {
+  background: var(--grad-brand);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(200, 50, 200, 0.35);
+}
+.feed-filter-btn.active:hover { color: #fff; }
+
+/* Intro line at top of a feed — used on The Third Place to explain the space. */
+.feed-intro {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin: -6px 0 20px;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+/* "Why this is here" label on a discovery post card. */
+.discovery-hook {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--text-muted-dark);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed rgba(150, 50, 220, 0.3);
+  letter-spacing: 0.01em;
+}
+.discovery-hook em {
+  color: var(--accent-purple);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* "New voices here" module — shown atop a fandom page for discovery
+   of active-but-unfollowed people in that fandom. */
+.new-voices {
+  background: linear-gradient(var(--bg-light-box), var(--bg-light-box)) padding-box,
+              var(--grad-border) border-box;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 14px 18px 16px;
+  margin-bottom: 22px;
+  box-shadow: 0 0 18px rgba(157, 78, 221, 0.12);
+}
+
+.new-voices-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+.new-voices-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.new-voice-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 110px;
+  padding: 10px 8px 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-dark);
+  border: 1px solid rgba(157, 78, 221, 0.15);
+  background: rgba(157, 78, 221, 0.04);
+}
+.new-voice-card:hover {
+  background: rgba(157, 78, 221, 0.1);
+  border-color: rgba(157, 78, 221, 0.35);
+}
+
+.new-voice-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent-purple);
+  box-shadow: 0 0 6px rgba(153, 51, 255, 0.4);
+  flex-shrink: 0;
+}
+.new-voice-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.new-voice-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-heading);
+  text-align: center;
+}
+
+.new-voice-note {
+  font-family: 'VT323', monospace;
+  font-size: 0.88rem;
+  color: var(--text-muted-dark);
+  text-align: center;
+  line-height: 1.2;
+}
 
 /* ══════ POST CARD ══════ */
 /* Light box with gradient border on dark cosmic bg — classic fan site energy */
