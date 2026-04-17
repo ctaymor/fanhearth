@@ -36,11 +36,11 @@ build:
     cp -R *.html styles.css includes.js avatars partials ../docs/mockups/
     echo "→ encrypting mockup HTML files (partials left plain)"
     for f in ../docs/mockups/*.html; do
-      npx --yes staticrypt "$f" -p "$PASSWORD" -d ../docs/mockups/ --short
+      npx --yes staticrypt "$f" -p "$PASSWORD" -d ../docs/mockups/ --short --remember 30
     done
     echo "→ syncing info page assets into ../docs/"
     cp ../site-src/style.css ../docs/style.css
     cp ../site-src/starfield.js ../docs/starfield.js
     echo "→ encrypting info page"
-    npx --yes staticrypt ../site-src/index.html -p "$PASSWORD" -d ../docs/ --short
+    npx --yes staticrypt ../site-src/index.html -p "$PASSWORD" -d ../docs/ --short --remember 30
     echo "✓ built. commit ../docs/ and push to publish."
