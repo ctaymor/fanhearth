@@ -1,0 +1,15 @@
+# FanHearth clickthrough mockups
+# Each screen is its own HTML file; shared sidebar/header live in partials/
+# and are injected by includes.js. Styles are in styles.css.
+
+default: serve
+
+# Serve the mockups on localhost:8080
+serve:
+    @echo "Serving mockups at http://localhost:8080"
+    @echo "Start page: index.html (main feed)"
+    python3 -m http.server 8080
+
+# Open the main feed in the default browser (macOS)
+open:
+    open http://localhost:8080/index.html
